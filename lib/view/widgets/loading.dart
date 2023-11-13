@@ -5,9 +5,9 @@ class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return LoadingAnimationWidget.staggeredDotsWave(
+    return LoadingAnimationWidget.discreteCircle(
       color: Colors.white,
-      size: 100,
+      size: 50,
     );
   }
 }

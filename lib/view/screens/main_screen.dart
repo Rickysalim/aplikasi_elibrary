@@ -1,3 +1,4 @@
+import 'package:e_library_nama_elib_mobile/view/screens/landing_screen.dart';
 import 'package:e_library_nama_elib_mobile/view/widgets/loading.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,10 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
   }
 
+  void _goToLandingScreen(BuildContext context) {
+    Navigator.pushNamed(context, LandingScreen.id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
             child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                    margin: EdgeInsets.all(20),
+                    margin: EdgeInsets.all(45),
                     child: _isLoading
                         ? Loading()
                         : ElevatedButton(
@@ -48,9 +53,11 @@ class _MainScreenState extends State<MainScreen> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              _goToLandingScreen(context);
+                            },
                             child: Padding(
-                              padding: EdgeInsets.all(20),
+                              padding: EdgeInsets.only(left:50, right: 50, top: 20, bottom: 20),
                               child: Text('GET STARTED'),
                             )))),
           )
